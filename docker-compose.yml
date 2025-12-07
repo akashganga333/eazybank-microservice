@@ -1,6 +1,6 @@
 services:
   accounts:
-    image: akashganga333/accounts:v1
+    image: akashganga333/accounts:v2
     ports:
       - "8081:8081"
   cards:
