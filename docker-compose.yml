@@ -1,0 +1,13 @@
+services:
+  accounts:
+    image: akashganga333/accounts:v1
+    ports:
+      - "8081:8081"
+  cards:
+    image: akashganga333/cards:v1
+    ports:
+      - "9000:9000"
+  loans:
+    image: akashganga333/loans:v1
+    ports:
+      - "8090:8090"
