@@ -1,0 +1,10 @@
+build:
+  version: 1.0.0
+loans:
+  details: "Dev Microservice for loans"
+  contact-info:
+    email: "test@gmail"
+    location: "Pune"
+  phone-no:
+    num1: "123123123"
+    num2: "321321321"

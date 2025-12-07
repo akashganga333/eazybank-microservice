@@ -1,0 +1,39 @@
+server:
+  port: 8071
+spring:
+  application:
+    name: "configserver"
+  profiles:
+#   active: native
+    active: git
+  cloud:
+    config:
+      server:
+ #       native:
+#          searchLocations: "classpath:/config"
+#           searchLocations: "file:/C:/Users/Akash/Desktop/Java Practice/Microservice/Udemy EazyBytes/file-config"
+        git:
+          uri: "https://github.com/akashganga333/miroservice-config.git"
+          timeout: 5
+          searchPaths: file-config
+          default-label: main
+          force-pull: true
+          clone-on-start: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    liveness-state:
+      enabled: true
+    readiness-state:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+encrypt:
+  key : "1231231239"

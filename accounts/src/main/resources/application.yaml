@@ -1,0 +1,63 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: accounts
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  config:
+    import: "optional:configserver:http://localhost:8071"
+  profiles:
+    active: "prod"
+#  rabbitmq:
+#    host: "localhost"
+#    port: 5672
+#    username: "guest"
+#    password: "guest"
+#    import:
+#      - "application_prod.yaml"
+#build:
+#  version: 1.0.0
+#accounts:
+#  details: "Dev Microservice for Accounts"
+#  contact-info:
+#    email: "test@gmail"
+#    location: "Pune"
+#  phone-no:
+#    num1: "123123123"
+#    num2: "321321321"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+  endpoint:
+    shutdown:
+      enabled: true
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+  instance:
+    preferIpAddress: true # Optional, for preferring IP address in registration
+info:
+  app:
+    name: "Accounts"
+    description: "Accounts Microservice for eazybytes"
+    version: "1.0.0"
